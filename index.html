@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Sweet Alert</title>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Bootstrap5 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.13.0/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.13.0/dist/sweetalert2.min.js"></script>
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/ff649a2a11.js" crossorigin="anonymous"></script>
+
+    <!-- Animated -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+</head>
+<body style="width: 100%; height: 100vh;">
+    <div class="container-fluid w-100 h-100 justify-content-center align-items-center d-flex">
+<div class="row">
+        <div class="row mt-4">
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn1">alert1</button>
+            </div> 
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn2">alert2</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn3">alert3</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn4">alert4</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn5">alert5</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn6">alert6</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn7">alert7</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn8">alert8</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn9">alert9</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn10">alert10</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn11">alert11</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning" id="alertbtn12">alert12</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <a href="https://sweetalert2.github.io/#download">Dokümantasyon</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#alertbtn1').click(function () {
+                Swal.fire('Any fool can use a computer');
+            });
+            
+            
+            $('#alertbtn2').click(function () {
+                Swal.fire(
+                    'Orada mısın?',
+                    'Bir bağlantı sorunu yaşıyor olabilirsin.',
+                    'question'
+                )
+            });
+            $('#alertbtn3').click(function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Bu işlemi gerçekleştiremezsin.',
+                    footer: '<a href="#">Yardım almak ister misin?</a>'
+                })
+            });
+
+            $('#alertbtn4').click(function () {
+                Swal.fire({
+                    imageUrl: 'https://placeholder.pics/svg/300x500',
+                    imageHeight: 500,
+                    imageAlt: 'Resim'
+                })
+            });
+
+            $('#alertbtn5').click(function () {
+                Swal.fire({
+                    title: '<strong>HTML <u>Örneği</u></strong>',
+                    icon: 'info',
+                    html:
+                     '<b>Kalın metin</b>, ' +
+                    '<a href="//sweetalert2.github.io">linkler</a> ' +
+                    'gibi diğer HTML etiketlerini kullanabiliriz.',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText:
+                    '<i class="fas fa-thumbs-up"></i> Güzeeell!',
+                    confirmButtonAriaLabel: 'Thumbs up, great!',
+                    cancelButtonText:
+                         '<i class="fas fa-thumbs-down"></i> Bu ne la',
+                    cancelButtonAriaLabel: 'Thumbs down'
+                })
+            });
+
+            $('#alertbtn6').click(function () {
+                Swal.fire({
+                    title: 'Değişiklikleri kaydetmek istediğinize emin misiniz?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: `Kaydet`,
+                    denyButtonText: `Yok etme`,
+                    }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            Swal.fire('Kaydedildi', '', 'success')
+                        }else if (result.isDenied) {
+                            Swal.fire('Tamam kaydetmedim', '', 'info')
+                        }
+                    })
+            });
+
+            $('#alertbtn7').click(function () {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Değişiklikler kaydedildi!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            });
+
+            $('#alertbtn8').click(function () {
+                Swal.fire({
+                    title: 'Animate.css ile özel animasyon',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+            });
+
+            $('#alertbtn9').click(function () {
+                Swal.fire({
+                    title: 'Kaydı silmek istediğinize emin misiniz?',
+                    text: "Bu kaydı silmek veri kaybına yol açabilir. Emin misiniz?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Evet, sil gitsin!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        )
+                    }
+                })
+            });
+
+            $('#alertbtn10').click(function () {
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                    title: 'Emin misin?',
+                    text: "Bu işlemi geri alamazsın!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Evet, sil gitsin!',
+                    cancelButtonText: 'Hayır, silme!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire(
+                            'Sildi!',
+                            'Bu dosya silindi.',
+                            'success'
+                        )
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                        'İptal edildi',
+                        'Dosyan güvende kaldıı :)',
+                        'error'
+                    )
+                        }
+                })
+            });
+
+            $('#alertbtn11').click(function () {
+                Swal.fire({
+                    title: 'Güzeeel!',
+                    text: 'Özel bir görüntüye sahip bir alarrımm çok güzeeel',
+                    imageUrl: 'https://unsplash.it/400/200',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })
+            });
+
+            $('#alertbtn12').click(function () {
+                let timerInterval
+                Swal.fire({
+                    title: 'Auto close alert!',
+                    html: 'I will close in <b></b> milliseconds.',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                        timerInterval = setInterval(() => {
+                            const content = Swal.getContent()
+                            if (content) {
+                                const b = content.querySelector('b')
+                                if (b) {
+                                    b.textContent = Swal.getTimerLeft()
+                                }
+                            }
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }         
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('I was closed by the timer')
+                    }
+                })
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
